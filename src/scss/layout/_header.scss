@@ -1,0 +1,9 @@
+.header {
+    background: $primary-color;
+    padding: 20px;
+    
+    &__logo {
+      font-size: 24px;
+      color: white;
+    }
+}
