@@ -6,11 +6,11 @@
 
     &__content{
         background-color: $primary-background;
-        height: 4rem;
+        height: 5rem;
         border: none;
         place-content: center;
-        @include responsive-grid(2, 3);
         transition: all .2s ease-in;
+        @include responsive-grid(2, 3);
         &--sticky{
             background: rgba($primary-color, 0.6);
             backdrop-filter: blur(10px);
@@ -54,6 +54,11 @@
     &__right{
         @include flex-align-center;
         justify-content: flex-end;
+
+        & button{
+            @include flex-center;
+            @include size(2.5rem, 2.5rem);            
+        }
     }
 }
 

@@ -1,10 +1,11 @@
 @use "../abstracts" as *;
 
 .button {
-    padding: 10px 20px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    border-style: none;
+    padding: 5px;
   
     &--primary {
       background: $primary-color;
