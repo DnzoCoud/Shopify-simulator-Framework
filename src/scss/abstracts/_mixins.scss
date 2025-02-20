@@ -76,3 +76,13 @@
   width: $width;
   height: $height;
 }
+
+@mixin responsive-grid($columns-small, $columns-large, $breakpoint: 768px){
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat($columns-small, 1fr);
+
+  @media (min-width: $breakpoint) {
+    grid-template-columns: repeat($columns-large, 1fr);
+  }
+}

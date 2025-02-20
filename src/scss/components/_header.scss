@@ -6,5 +6,8 @@
 
     &__content{
         background-color: $primary-background;
+        height: 4rem;
+        border: none;
+        @include responsive-grid(2, 3);
     }
 }

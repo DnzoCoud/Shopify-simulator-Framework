@@ -7,6 +7,16 @@
         "background_color": "#ffffff"
       }
     },
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {}
+    },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
