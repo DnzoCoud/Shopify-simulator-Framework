@@ -71,3 +71,8 @@
   );
   pointer-events: none;
 }
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
