@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.header {
+    position: sticky;
+    top: 0;
+
+    &__content{
+        background-color: $primary-background;
+    }
+}
