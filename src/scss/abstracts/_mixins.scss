@@ -6,6 +6,11 @@
   align-items: center;
 }
 
+@mixin flex-align-center{
+  display: flex;
+  align-items: center;
+}
+
 @mixin inline-flex-center {
   display: inline-flex;
   justify-content: center;

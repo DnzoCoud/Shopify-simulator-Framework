@@ -10,3 +10,7 @@ body {
   @include noise-bg;
 }
 
+h1{
+  color: $text-white;
+  font-weight: bolder;
+}

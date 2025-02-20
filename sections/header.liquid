@@ -1,15 +1,21 @@
 <header class="header">
     {%  render 'top-bar', marquee_text: settings['top-bar'].settings.marquee_text %}
-    <div class="header__content px-4">
-        <div class="header__left">
+    <div class="header__content px-4"  data-header>
+        <div class="header__left gap-3">
             {%  render 'icon-menu' %}
-            <p style="color: aliceblue;">{{ settings['header'].settings.primary_logo | asset_url }}</p>
-            <img src="{{ settings['header'].settings.primary_logo | asset_url }}" alt="IsoLogo">
+            <div class="header__logo">
+                <img src="{{ settings['header'].settings.primary_logo | asset_url }}" alt="Shuffle Logo" loading="lazy" width="20" height="20">
+                <h1 class="letter-spacing-extratight text">SHUFFLE<E</h1>
+            </div>
+            <div class="header__store gap-1">
+                <span class="header__store header__store--separator"></span>
+                <h1 class="letter-spacing-extratight text-xs">STORE</h1>
+            </div>
         </div>
         <nav class="header__nav">
             sss
         </nav>
-        <div class="header__right">
+        <div class="header__right gap-4">
             {% comment %} {% render 'icon-cart' %} {% endcomment %}
         </div>
     </div>
