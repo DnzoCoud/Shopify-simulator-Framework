@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+.top-bar {
+  background-color: $secondary-color;
+  width: 100%;
+  height: 2rem;
+  position: relative;
+  @include flex-center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      $secondary-color,
+      transparent 30%,
+      transparent 70%,
+      $secondary-color
+    );
+    pointer-events: none;
+  }
+}
