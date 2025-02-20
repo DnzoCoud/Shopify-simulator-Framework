@@ -5,22 +5,46 @@
   width: 100%;
   height: 2rem;
   position: relative;
+  white-space: nowrap;
   @include flex-center;
 
   &::before {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include gradient-init-to-fin($secondary-color, $secondary-color);
+  }
+
+  &__marquee {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      $secondary-color,
-      transparent 30%,
-      transparent 70%,
-      $secondary-color
-    );
-    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 20px;
+    min-width: 200%;
+    animation: marquee-scroll 50s linear infinite;
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: bolder;
+    color: $text-white;
+  }
+
+  &__separator {
+    fill: #000;
+  }
+}
+
+// Animación para el scroll infinito
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }

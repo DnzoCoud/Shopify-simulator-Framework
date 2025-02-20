@@ -1,3 +1,12 @@
 <div class="top-bar">
-    top-bar
+    <div class="top-bar__marquee">
+        <div class="top-bar__content">
+          {% for i in (1..10) %}
+            <span class="top-bar__text">FREE SHIPPING FOR ORDERS OVER $100</span>
+            <svg class="top-bar__separator" width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 10 L70 50 L50 90 L30 50 Z" fill="currentColor"/>
+            </svg>
+          {% endfor %}
+        </div>
+      </div>
 </div>
