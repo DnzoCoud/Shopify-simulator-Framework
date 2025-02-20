@@ -1,6 +1,16 @@
 <header class="header">
     {%  render 'top-bar', marquee_text: settings['top-bar'].settings.marquee_text %}
-    <div class="header__content">
-        sadasd
+    <div class="header__content px-4">
+        <div class="header__left">
+            {%  render 'icon-menu' %}
+            <p style="color: aliceblue;">{{ settings['header'].settings.primary_logo | asset_url }}</p>
+            <img src="{{ settings['header'].settings.primary_logo | asset_url }}" alt="IsoLogo">
+        </div>
+        <nav class="header__nav">
+            sss
+        </nav>
+        <div class="header__right">
+            {% comment %} {% render 'icon-cart' %} {% endcomment %}
+        </div>
     </div>
 </header>

@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -27,6 +28,32 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
+      //   type: "asset/resource",
+      //   generator: {
+      //     filename: "assets/[name][ext]",
+      //   },
+      // },
     ],
   },
+  // plugins: [
+  //   new CopyWebpackPlugin({
+  //     patterns: [
+  //       {
+  //         from: "assets",
+  //         to: "assets",
+  //         globOptions: {
+  //           ignore: ["**/*.md"],
+  //         },
+  //         noErrorOnMissing: true,
+  //       },
+  //       {
+  //         from: "config/settings_data.json",
+  //         to: "config/settings_data.json",
+  //         noErrorOnMissing: true,
+  //       },
+  //     ],
+  //   }),
+  // ],
 };

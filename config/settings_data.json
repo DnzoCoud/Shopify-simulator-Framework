@@ -15,7 +15,9 @@
     },
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "primary_logo": "shuffle_isologo.png"
+      }
     },
     "hero-banner": {
       "type": "hero-banner",

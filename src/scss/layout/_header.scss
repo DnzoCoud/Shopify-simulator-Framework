@@ -8,6 +8,15 @@
         background-color: $primary-background;
         height: 4rem;
         border: none;
+        place-content: center;
         @include responsive-grid(2, 3);
     }
+
+    &__nav{
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
 }
+
