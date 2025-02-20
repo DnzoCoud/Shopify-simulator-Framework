@@ -31,11 +31,11 @@
 
 @mixin responsive($breakpoint) {
   @if $breakpoint == tablet {
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       @content;
     }
   } @else if $breakpoint == mobile {
-    @media (max-width: 480px) {
+    @media (min-width: 480px) {
       @content;
     }
   }
@@ -52,7 +52,7 @@
     width: 100%;
     height: 100%;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.15;
+    opacity: 0.20;
     pointer-events: none;
   }
 }

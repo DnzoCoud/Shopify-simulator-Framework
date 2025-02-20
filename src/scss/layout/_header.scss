@@ -59,6 +59,15 @@
             @include flex-center;
             @include size(2.5rem, 2.5rem);            
         }
+
+        & a{
+            display: none;
+            @include responsive(tablet){
+                display: block;
+                color: $text-white;
+                text-decoration: none;
+            }
+        }
     }
 }
 
