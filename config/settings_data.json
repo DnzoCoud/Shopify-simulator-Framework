@@ -16,7 +16,9 @@
     "header": {
       "type": "header",
       "settings": {
-        "primary_logo": "shuffle_isologo.png"
+        "primary_logo": "shuffle_isologo.avif",
+        "aria_menu": "Open menu",
+        "aria_car": "Open car"
       }
     },
     "hero-banner": {
