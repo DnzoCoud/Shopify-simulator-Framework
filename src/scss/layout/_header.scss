@@ -4,6 +4,8 @@
   position: sticky;
   top: 0;
   background-color: $primary-background;
+  z-index: 9999;
+
   &__content {
     height: 4rem;
     border: none;

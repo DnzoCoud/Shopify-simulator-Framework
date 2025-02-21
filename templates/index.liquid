@@ -6,13 +6,18 @@
   <meta name="description" content="Shuffle is a trendy eCommerce store offering stylish and high-quality clothing for every occasion. Explore our latest collections and shop with confidence!">
   <link rel="stylesheet" href="/styles.css">
   <title>Shopify Simulator | Gradiweb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-  {% include 'header.liquid' %}
-  <div class="container">
-    {% include 'hero-banner.liquid' %}
-  </div>
-  {% include 'featured-products.liquid' %}
+  <main>
+    {% include 'header.liquid' %}
+    <section class="container py-4">
+      {% include 'hero-banner.liquid' %}
+    </section>
+    {% include 'featured-products.liquid' %}
+  </main>
   <script src="/main.js"></script>
   <script src="{{ 'js/header.js' | asset_url }}"></script>
 </body>

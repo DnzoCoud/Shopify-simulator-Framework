@@ -127,3 +127,8 @@
     padding-right: 64px;
   }
 }
+
+@mixin rounded($radius) {
+  border-radius: $radius;
+  overflow: hidden;
+}
