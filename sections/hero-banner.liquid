@@ -5,5 +5,5 @@
             <button class="button button--secondary text-normal p-4" type="button">{{ settings['hero-banner'].settings.button_text | upcase }}</button>
         </div>
     </div>
-    {%  render 'hero-banner-marquee' %}
+    {%  render 'hero-banner-marquee'  marquee_text: settings['hero-banner'].settings.marquee_text | upcase %}
 </section>

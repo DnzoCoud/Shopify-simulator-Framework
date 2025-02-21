@@ -84,7 +84,7 @@
   pointer-events: none;
 }
 
-@mixin size($width, $height) {
+@mixin size($width:100%, $height:100%) {
   width: $width;
   height: $height;
 }

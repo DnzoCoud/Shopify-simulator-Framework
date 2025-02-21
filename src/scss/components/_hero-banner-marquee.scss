@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.hero-banner-marquee{
+    @include size(100%, 4rem);
+
+    &__text {
+        font-size: 30px;
+        font-weight: 900;
+        color: $text-white;
+    }
+    &__separator {
+        fill: $light-secondary-color;
+        @include size(3rem, 3rem);
+    }
+}
