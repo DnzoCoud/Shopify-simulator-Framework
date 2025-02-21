@@ -1,5 +1,5 @@
-<section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
+<section class="container py-4 featured-products">
+  {% comment %} <h2>{{ settings['featured-products'].settings.heading }}</h2> {% endcomment %}
   <div class="product-list">
     {% for product in products %}
       {% render 'product-card', product: product %}

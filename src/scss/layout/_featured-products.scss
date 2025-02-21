@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.featured-products{
+    width: 100%;
+    @include flex-col;
+}

@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.product-list {
+    width: 100%;
+    @include flex-align-center;
+}
