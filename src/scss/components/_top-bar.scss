@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.top-bar {
+  background-color: $secondary-color;
+  width: 100%;
+  height: 2rem;
+  position: relative;
+  white-space: nowrap;
+  @include flex-center;
+
+  &::before {
+    content: "";
+    @include gradient-init-to-fin($secondary-color, $secondary-color);
+  }
+
+  &__marquee {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2px;
+    min-width: 200%;
+    animation: marquee-scroll 50s linear infinite;
+  }
+
+  &__text {
+    font-size: 10px;
+    font-weight: 900;
+    color: $text-white;
+  }
+
+  &__separator {
+    fill: $light-secondary-color;
+    @include size(2rem, 1.5rem)
+  }
+}
+
+// Animación para el scroll infinito
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
