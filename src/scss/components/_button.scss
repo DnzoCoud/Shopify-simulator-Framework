@@ -1,20 +1,19 @@
 @use "../abstracts" as *;
 
 .button {
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    border-style: none;
-    padding: 5px;
-  
-    &--primary {
-      background: $primary-color;
-      color: white;
-    }
-  
-    &--secondary {
-      background: $secondary-color;
-      color: white;
-    }
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  border-style: none;
+  padding: 8px;
+
+  &--primary {
+    background: $primary-color;
+    color: white;
+  }
+
+  &--secondary {
+    background: $secondary-color;
+    color: white;
+  }
 }
-  
