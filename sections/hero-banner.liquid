@@ -1,4 +1,9 @@
-<div class="hero-banner">
-    <img src="{{ settings['hero-banner'].settings.background_image | asset_url }}" alt="" width="800" height="700">
-    <button class="button button--secondary text-normal" type="button">{{ settings['hero-banner'].settings.button_text }}</button>
-</div>
+<section  class="hero-banner">
+    <div class="container py-4">
+        <div class="hero-banner__content">
+            <img src="{{ settings['hero-banner'].settings.background_image | asset_url }}" alt="" width="800" height="700">
+            <button class="button button--secondary text-normal p-4" type="button">{{ settings['hero-banner'].settings.button_text | upcase }}</button>
+        </div>
+    </div>
+    {%  render 'hero-banner-marquee' %}
+</section>
