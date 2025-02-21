@@ -4,8 +4,9 @@
   "description": "Shopify simulator template",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack"
+    "start": "node server.js ",
+    "build": "webpack",
+    "serve": "webpack && node server.js"
   },
   "keywords": [
     "shopify",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.11.0",
+    "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.85.0",
     "sass-loader": "^13.3.3",
     "style-loader": "^3.3.4",

@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &--small {
+    max-width: 800px;
+  }
+
+  &--large {
+    max-width: 1400px;
+  }
+
+  &--fluid {
+    width: 100%;
+    max-width: none;
+  }
+
+  @include responsive(tablet) {
+    width: 90%;
+  }
+
+  @include responsive(mobile) {
+    width: 100%;
+  }
+}

@@ -1,18 +1,32 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/app.js',
+  mode: "development",
+  entry: "./src/app.js",
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'main.js',
+    filename: "main.js",
+    path: path.resolve(__dirname, "public"),
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              implementation: require("sass"),
+              sassOptions: {
+                fiber: false,
+                silenceDeprecations: ["legacy-js-api"],
+              },
+            },
+          },
+        ],
       },
     ],
   },
-  mode: 'development',
 };
