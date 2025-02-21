@@ -25,7 +25,7 @@
     align-items: center;
     gap: 2px;
     min-width: 200%;
-    animation: marquee-scroll 50s linear infinite;
+    @include marquee-animation;
   }
 
   &__text {
