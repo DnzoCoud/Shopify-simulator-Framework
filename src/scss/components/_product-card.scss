@@ -5,6 +5,7 @@
     justify-content: space-between;
     @include size(14rem, 24rem);
     
+    
     &__image{
         @include size(100%, 20rem);
         border: 3px solid $secondary-color;
@@ -16,12 +17,23 @@
             @include square-size(100%);
             transition: transform 0.5s ease-in-out; // Suaviza la animación del zoom
         }
-
+        
         &:hover{
             img {
                 transform: scale(1.1);
                 object-position: center;
             }
         }
+    }
+    &__title, &__price{
+        color: $text-white;
+        font-size: 0.8rem;
+    }
+    &__title{
+        font-weight: lighter;
+    }
+    
+    &__price{        
+        font-weight: bolder;
     }
 }

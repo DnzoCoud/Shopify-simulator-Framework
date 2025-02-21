@@ -5,7 +5,7 @@
   {% if product.tags %}
     <ul class="tag py-2">
       {% for tag in product.tags %}
-        <li class="tag__item">{% render 'badge', badge_text:tag, class:"badge--secondary" %}</li>
+        <li>{% render 'badge', badge_text:tag, class:"badge--secondary" %}</li>
         
       {% endfor %}
     </ul>
