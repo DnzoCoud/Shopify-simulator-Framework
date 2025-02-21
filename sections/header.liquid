@@ -1,11 +1,11 @@
-<header class="header">
+<header class="header" data-header>
     {%  render 'top-bar', marquee_text: settings['top-bar'].settings.marquee_text %}
-    <div class="header__content px-4"  data-header>
+    <div class="header__content container">
         <div class="header__left gap-3">
             {%  render 'icon-menu' %}
             <div class="header__logo">
                 <img src="{{ settings['header'].settings.primary_logo | asset_url }}" alt="Shuffle Logo" loading="lazy" width="20" height="20">
-                <h1 class="letter-spacing-extratight text">SHUFFLE</h1>
+                <h1 class="letter-spacing-extratight text-normal">SHUFFLE</h1>
             </div>
             <div class="header__store gap-1">
                 <span class="header__store header__store--separator"></span>
@@ -16,8 +16,8 @@
             sss
         </nav>
         <div class="header__right gap-4">
-            <a href="#">All Products</a>
-            <a href="#">Collections</a>
+            <a href="#" class="text-2xs">All Products</a>
+            <a href="#" class="text-2xs">Collections</a>
             <button class="button button--secondary" aria-label="{{ settings['header'].settings.aria_car }}">
                 {% render 'icon-cart' %}
             </button>

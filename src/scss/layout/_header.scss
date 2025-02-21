@@ -3,10 +3,9 @@
 .header {
   position: sticky;
   top: 0;
-
+  background-color: $primary-background;
   &__content {
-    background-color: $primary-background;
-    height: 5rem;
+    height: 4rem;
     border: none;
     place-content: center;
     transition: all 0.2s ease-in;
@@ -25,14 +24,18 @@
   }
   &__logo {
     @include flex-align-center;
+    gap: 0;
     & img {
       @include size(1.5rem, 1.5rem);
+    }
+    @include respond(sm) {
+      gap: 5px;
     }
 
     & h1 {
       display: none;
 
-      @media (min-width: 768px) {
+      @include respond(sm) {
         display: block;
       }
     }
@@ -65,6 +68,10 @@
     & button {
       @include flex-center;
       @include size(2.5rem, 2.5rem);
+      @include respond(md) {
+        @include size(3.5rem, 2.5rem);
+        padding: 14px;
+      }
     }
 
     & a {
