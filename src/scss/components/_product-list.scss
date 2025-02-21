@@ -1,6 +1,25 @@
 @use "../abstracts" as *;
 
 .product-list {
-    width: 100%;
-    @include flex-align-center;
+    width: 100vw;// Ocupa todo el ancho de la pantalla en móviles
+    margin-left: calc(-50vw + 50%); // Centra el ancho completo de la pantalla
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    padding-left: 10px;
+
+    @include respond(md){
+        width: 100%;
+        overflow: hidden;
+        margin-left: 0;
+        margin-right: 0;
+        white-space: wrap;
+    }
+
+    &__row{
+        flex-wrap: nowrap;
+        width: 100%;
+        @include responsive-grid(4, 4);
+    }
 }

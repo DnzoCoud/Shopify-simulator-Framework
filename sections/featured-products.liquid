@@ -1,8 +1,10 @@
-<section class="container py-4 featured-products">
+<section class="container featured-products py-4" data-products >
   {% comment %} <h2>{{ settings['featured-products'].settings.heading }}</h2> {% endcomment %}
   <div class="product-list">
-    {% for product in products %}
-      {% render 'product-card', product: product %}
-    {% endfor %}
+    <div class="product-list__row">
+      {% for product in products %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
   </div>
 </section>

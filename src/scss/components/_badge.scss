@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.badge{
+   padding: 2px 4px 2px 4px;
+   background-color: $primary-background;
+   @include rounded(10px);
+   
+
+   &--secondary{
+    background-color: $secondary-color;
+   }
+}

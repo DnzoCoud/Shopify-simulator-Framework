@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.product-card{
+    @include flex-col;
+    justify-content: space-between;
+    @include size(14rem, 24rem);
+    
+    &__image{
+        @include size(100%, 20rem);
+        border: 3px solid $secondary-color;
+        @include rounded(7px);
+        transition: all .2s ease-in-out;
+        
+        & img{
+            object-fit: cover;
+            @include square-size(100%);
+            transition: transform 0.5s ease-in-out; // Suaviza la animación del zoom
+        }
+
+        &:hover{
+            img {
+                transform: scale(1.1);
+                object-position: center;
+            }
+        }
+    }
+}

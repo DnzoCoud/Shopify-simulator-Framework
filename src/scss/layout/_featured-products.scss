@@ -1,6 +1,16 @@
 @use "../abstracts" as *;
 
 .featured-products{
-    width: 100%;
     @include flex-col;
+    width: 100%;
+    
+    &__container{
+        
+        @include respond(md){
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+    }
 }
