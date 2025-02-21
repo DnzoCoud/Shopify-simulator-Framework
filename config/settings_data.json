@@ -18,7 +18,8 @@
       "settings": {
         "primary_logo": "shuffle_isologo.avif",
         "aria_menu": "Open menu",
-        "aria_car": "Open car"
+        "aria_car": "Open car",
+        "coins-supported-label": "We Accept"
       }
     },
     "hero-banner": {

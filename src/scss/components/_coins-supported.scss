@@ -1,12 +1,44 @@
 @use "../abstracts" as *;
 
 .coins-supported{
-    @include flex-align-center;
+    @include inline-flex-center;
     background-color: $primary-background;
     border: 1px solid $secondary-color;
     @include rounded(20px);
+    gap: 8px;
+
+    &__label{
+        color: white;
+    }
+    
+    &__content{
+        @include flex-align-center;
+        gap: 8px;
+    }
 
     &__span {
-        @include square-size(2rem);
+        @include square-size(1.5rem);
+        @include flex-center;
+        padding: 0.3rem;
+        @include rounded(9999px);
+
+        &--bitcoin{
+            background-color: $bitcoin-color;
+            transform: rotate(20deg);
+        }
+        &--ethereumcoin{
+            background-color: $ethereum-color;
+            padding: 0.5rem;
+        }
+        &--litecoin{
+            background-color: $litecoin-color;
+            padding: 0.5rem;
+        }
+        &--dogecoin{
+            background-color: $dogecoin-color;
+        }
+        &--stablecoin{
+            background-color: $stablecoin-color;
+        }
     }
 }
