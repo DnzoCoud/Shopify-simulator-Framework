@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+@each $key, $value in $spacing-values {
+    .px-#{$key} {
+      padding-left: $value;
+      padding-right: $value;
+    }
+  
+    .py-#{$key} {
+      padding-top: $value;
+      padding-bottom: $value;
+    }
+  
+    .p-#{$key} {
+      padding: $value;
+    }
+
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+}

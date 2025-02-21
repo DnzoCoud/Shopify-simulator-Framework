@@ -1,4 +1,6 @@
 @use "variables" as *;
+@use "../base/animations" as *;
+@use "sass:map";
 
 @mixin flex-center {
   display: flex;
@@ -6,10 +8,20 @@
   align-items: center;
 }
 
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
 @mixin inline-flex-center {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin flex-col{
+  display: flex;
+  flex-direction: column;
 }
 
 @mixin flex-col-center {
@@ -26,11 +38,11 @@
 
 @mixin responsive($breakpoint) {
   @if $breakpoint == tablet {
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
       @content;
     }
   } @else if $breakpoint == mobile {
-    @media (max-width: 480px) {
+    @media (min-width: 480px) {
       @content;
     }
   }
@@ -47,7 +59,7 @@
     width: 100%;
     height: 100%;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.15;
+    opacity: 0.2;
     pointer-events: none;
   }
 }
@@ -72,7 +84,67 @@
   pointer-events: none;
 }
 
-@mixin size($width, $height) {
+@mixin size($width:100%, $height:100%) {
   width: $width;
   height: $height;
+}
+
+@mixin square-size($size:100%){
+  width: $size;
+  height: $size;
+}
+
+@mixin responsive-grid($columns-small, $columns-large, $breakpoint: 768px) {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat($columns-small, 1fr);
+
+  @media (min-width: $breakpoint) {
+    grid-template-columns: repeat($columns-large, 1fr);
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "🚨 El breakpoint '#{$breakpoint}' no existe en el mapa de breakpoints.";
+  }
+}
+
+@mixin container-padding-x() {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include respond(sm) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include respond(md) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include respond(lg) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  @include respond(xl) {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
+@mixin rounded($radius) {
+  border-radius: $radius;
+  overflow: hidden;
+}
+
+// MIXINS FOR ANIMATIONS
+@mixin marquee-animation($duration:50s) {
+  animation: marquee-scroll $duration linear infinite;  
 }

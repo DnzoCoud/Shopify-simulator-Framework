@@ -16,6 +16,7 @@
   "author": "miguelgradi",
   "license": "ISC",
   "dependencies": {
+    "copy-webpack-plugin": "^12.0.2",
     "express": "^4.21.2",
     "liquidjs": "^10.20.1"
   },

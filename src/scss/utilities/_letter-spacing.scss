@@ -1,0 +1,20 @@
+.letter-spacing {
+    &-none {
+      letter-spacing: 0;
+    }
+    &-extratight {
+      letter-spacing: -3.5px;
+    }
+    &-tight {
+      letter-spacing: -0.5px;
+    }
+    &-normal {
+      letter-spacing: normal;
+    }
+    &-wide {
+      letter-spacing: 1px;
+    }
+    &-wider {
+      letter-spacing: 2px;
+    }
+}
