@@ -89,6 +89,11 @@
   height: $height;
 }
 
+@mixin square-size($size:100%){
+  width: $size;
+  height: $size;
+}
+
 @mixin responsive-grid($columns-small, $columns-large, $breakpoint: 768px) {
   display: grid;
   gap: 20px;

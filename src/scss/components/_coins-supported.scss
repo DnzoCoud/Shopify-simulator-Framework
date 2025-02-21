@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+.coins-supported{
+    @include flex-align-center;
+    background-color: $primary-background;
+    border: 1px solid $secondary-color;
+    @include rounded(20px);
+
+    &__span {
+        @include square-size(2rem);
+    }
+}

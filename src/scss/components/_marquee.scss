@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+/**
+ * Estilos para el componente `.marquee`
+ * Este componente crea un efecto de desplazamiento continuo (marquee) con variantes de color.
+ */
 .marquee{
     position: relative;
     white-space: nowrap;
