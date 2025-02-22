@@ -1,4 +1,6 @@
-<div class="product-card">
+{% assign hide = hide | default: false %}
+
+<div class="product-card {% if hide %}hidden{% endif %}" data-aos="fade-up">
   <div class="product-card__image">
     <img src="{{product.image | asset_url}}" alt="Img for {{product.title}}" width="200" height="300">
   </div>
@@ -10,6 +12,13 @@
       {% endfor %}
     </ul>
   {% endif %}
-  <h3 class="product-card__title">{{ product.title }}</h3>
-  <p class="product-card__price">${{ product.price }}</p>
+  <div class="product-card__info">
+    <div>
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <p class="product-card__price">${{ product.price }}</p>
+    </div>
+    <button class="button button--secondary rounded-full" aria-label="{{ settings['header'].settings.aria_car }}">
+        {% render 'icon-cart' %}
+    </button>
+  </div>
 </div>

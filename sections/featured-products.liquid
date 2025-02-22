@@ -1,10 +1,16 @@
-<section class="container featured-products py-4" data-products >
+<section class="featured-products" data-products >
   {% comment %} <h2>{{ settings['featured-products'].settings.heading }}</h2> {% endcomment %}
-  <div class="product-list">
+  <div class="featured-products__container py-4">
+    <div class="product-list">
     <div class="product-list__row">
       {% for product in products %}
-        {% render 'product-card', product: product %}
+        {% assign hide_product = forloop.index > 4 %}
+        {% render 'product-card', product: product, hide: hide_product %}
       {% endfor %}
     </div>
+    {% if products.size > 4 %}
+      <button id="load-more" class="button button--secondary font-extrabolder">VIEW ALL</button>
+    {% endif %}
+  </div>
   </div>
 </section>
