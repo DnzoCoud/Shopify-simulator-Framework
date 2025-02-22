@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.latest-collection {
+  @include flex-col;
+  @include size(100%, auto);
+  position: relative;
+  padding-top: 60px;
+
+  &__gradient {
+    position: absolute;
+    top: 0;
+
+    background: radial-gradient(
+      circle,
+      rgba($secondary-color, 1) 0%,
+      rgba($primary-color, 0) 100%
+    );
+  }
+  &__title {
+    @include flex-col-center;
+
+    & div {
+      @include flex-align-center;
+      & span {
+        font-size: 2rem;
+        color: $text-white;
+      }
+    }
+    & span {
+      font-size: 2rem;
+      color: $text-white;
+    }
+  }
+  &__content {
+    @include flex-col;
+    gap: 10px;
+  }
+}

@@ -1,6 +1,6 @@
 {% assign hide = hide | default: false %}
 
-<div class="product-card {% if hide %}hidden{% endif %}" data-aos="fade-up">
+<div class="product-card pb-4 {% if hide %}hidden{% endif %}" data-aos="fade-up">
   <div class="product-card__image">
     <img src="{{product.image | asset_url}}" alt="Img for {{product.title}}" width="200" height="300">
   </div>
