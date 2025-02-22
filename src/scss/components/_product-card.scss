@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+.product-card {
+  flex: 0 0 auto;
+  min-width: 80vw;
+  @include flex-col;
+  justify-content: space-between;
+  @include size(14rem, 24rem);
+  margin-left: 10px;
+  margin-right: 10px;
+
+  @include respond(md) {
+    min-width: 40vw; // Ajusta para tabletas
+  }
+  @include respond(lg) {
+    min-width: 100%; // En pantallas grandes, se comporta como un grid normal
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  &__image {
+    @include size(100%, 20rem);
+    border: 3px solid $secondary-color;
+    @include rounded(7px);
+    transition: all 0.2s ease-in-out;
+
+    & img {
+      object-fit: cover;
+      @include square-size(100%);
+      transition: transform 0.5s ease-in-out; // Suaviza la animación del zoom
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        object-position: center;
+      }
+    }
+  }
+  &__title,
+  &__price {
+    color: $text-white;
+    font-size: 0.8rem;
+  }
+  &__title {
+    font-weight: lighter;
+  }
+
+  &__price {
+    font-weight: bolder;
+  }
+
+  &__info {
+    @include flex-align-center;
+    justify-content: space-between;
+
+    & button .icon {
+      @include square-size(20px);
+      @include respond(md) {
+        @include square-size(25px);
+      }
+    }
+  }
+}

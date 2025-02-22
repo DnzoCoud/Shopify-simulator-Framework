@@ -6,6 +6,7 @@
   cursor: pointer;
   border-style: none;
   padding: 8px;
+  @include flex-center;
 
   &--primary {
     background: $primary-color;

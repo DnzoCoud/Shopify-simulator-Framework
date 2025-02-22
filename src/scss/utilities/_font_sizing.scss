@@ -18,3 +18,15 @@
     font-size: 2.5rem;
   }
 }
+
+.font {
+  &-bold {
+    font-weight: bold;
+  }
+  &-bolder {
+    font-weight: bolder;
+  }
+  &-extrabolder {
+    font-weight: 900;
+  }
+}

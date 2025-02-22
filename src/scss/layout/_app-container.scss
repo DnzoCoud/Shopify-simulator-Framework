@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.app-container{
+    @include square-size(100%);
+    overflow: auto;
+}

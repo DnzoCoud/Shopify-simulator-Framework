@@ -2,7 +2,7 @@
 {% assign icon_size = icon_size | default: 50 %}
 <div class="hero-banner-marquee">
     <div class="marquee marquee--primary">
-        <div class="marquee__content">
+        <div class="marquee__content marquee__content--slow">
             {% for i in (1..10) %}
                 <span class="hero-banner-marquee__text">{{ marquee_text }}</span>
                 <svg class="hero-banner-marquee__separator" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
