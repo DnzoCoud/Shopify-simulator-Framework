@@ -28,35 +28,6 @@
     }
   }
 
-  // &__title {
-  //   width: 100%;
-  //   display: grid;
-  //   margin-bottom: 2rem;
-  //   grid-template-columns: 1fr auto 1fr; /* 3 columnas: SVG | Texto | SVG */
-  //   align-items: self-start; /* Centra verticalmente todo el contenido */
-  //   margin-bottom: 2rem;
-  //   transition: all 0.2s ease-in;
-
-  //   @include respond(md) {
-  //     align-items: center;
-  //   }
-
-  //   .first-col {
-  //     justify-self: end; /* Alinea el primer SVG al final de su columna */
-  //   }
-
-  //   .last-col {
-  //     justify-self: start; /* Alinea el último SVG al principio de su columna */
-  //   }
-
-  //   span {
-  //     text-align: center; /* Centra el texto en la columna del medio */
-  //     color: $text-white;
-  //     font-size: 2rem;
-  //     font-weight: 900;
-  //   }
-  // }
-
   &__title {
     position: relative; /* Contenedor relativo para posicionar las estrellas */
     width: 100%;
@@ -124,7 +95,7 @@
     column-gap: 16px;
     & .collection-card {
       grid-column: span 2;
-      height: 15rem;
+      height: 20rem;
     }
 
     @include respond(md) {
