@@ -4,61 +4,99 @@
   @include size(100%, auto);
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    width: 100%;
+    display: flex;
+    flex-direction: column !important; // Asegura que se apilen en móviles
     gap: 16px; /* Espacio entre columnas */
 
     /* Intercambiar columnas en dispositivos pequeños */
-    .shop__info {
-      order: 2; /* La primera columna se mueve a la segunda posición */
+    .footer__content-shop__info {
+      order: 3; // Se mueve después de la navegación al final
     }
 
-    .nav__content {
-      order: 1; /* La segunda columna se mueve a la primera posición */
+    .footer__content-nav {
+      order: 1; // Se muestra primero
     }
 
-    .form__contact {
-      order: 3; /* La tercera columna permanece en su lugar */
+    .footer__content-contact {
+      order: 2; // Se mueve de segundas
     }
 
     /* Restaurar el orden en dispositivos medianos (md) */
     @include respond(md) {
-      .shop__info {
-        order: initial; /* Restablece el orden */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 3 columnas iguales
+      gap: 16px;
+
+      .footer__content-shop__info {
+        order: initial;
       }
 
-      .nav__content {
-        order: initial; /* Restablece el orden */
+      .footer__content-nav {
+        order: initial;
       }
 
-      .form__contact {
-        order: initial; /* Restablece el orden */
+      .footer__content-contact {
+        order: initial;
       }
     }
 
     &-shop__info {
-      @include flex-col;
+      display: flex;
+      flex-direction: column-reverse;
       gap: 15px;
+
+      @include respond(md) {
+        flex-direction: column;
+      }
 
       &.shop__info--img {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        justify-content: space-between;
         gap: 10px;
 
-        & img {
-          @include square-size(4rem);
+        & div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          & img {
+            @include square-size(4rem);
+          }
+
+          & span {
+            color: $text-white;
+            font-weight: 900;
+            display: flex;
+            align-items: flex-start;
+            & i {
+              color: $secondary-color;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+
+      .shop__info--list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        flex: 0 0 1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 5px;
+
+        & li {
+          color: $text-white;
+          font-size: 0.8rem;
+          font-weight: normal;
         }
 
-        & span {
-          color: $text-white;
-          font-weight: 900;
-          display: flex;
-          align-items: flex-start;
-          & i {
-            color: $secondary-color;
-            font-weight: normal;
-          }
+        @include respond(md) {
+          display: none;
         }
       }
 
@@ -72,10 +110,167 @@
         }
       }
     }
-    &-nav__content {
+    &-nav {
       @include flex-col;
       justify-content: space-around;
       align-items: center;
+      gap: 20px;
+
+      & .footer__nav {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        @include respond(md) {
+          justify-content: center;
+        }
+
+        &-list {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          flex-direction: column;
+
+          @include respond(md) {
+            flex-direction: row;
+          }
+        }
+
+        &-item {
+          text-decoration: none;
+        }
+
+        &-link {
+          text-decoration: none;
+          font-weight: normal;
+          position: relative;
+          padding-bottom: 5px;
+          white-space: nowrap;
+          font-size: 0.5rem;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
+
+        // 🎨 Estilos solo para el primer nav
+        &--primary {
+          .footer__nav-link {
+            color: white;
+            font-size: 16px;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              width: 100%;
+              height: 3px;
+              background: linear-gradient(
+                to right,
+                $secondary-color,
+                white,
+                $secondary-color
+              );
+              transform: translateX(-50%) scaleX(0);
+              transition: transform 0.3s ease-in-out;
+            }
+
+            &:hover::after,
+            &:focus::after,
+            &.active::after {
+              // Se activa cuando el enlace tiene la clase "active"
+              transform: translateX(-50%) scaleX(1);
+            }
+          }
+        }
+        &:not(.footer__nav--primary) {
+          .footer__nav-list {
+            gap: 0;
+            width: 90%;
+          }
+
+          .footer__nav-link {
+            font-size: 0.8rem;
+            color: #ccc;
+            text-decoration: none;
+
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+    &-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem; // Espacio entre elementos
+
+      @include respond(md) {
+        align-items: flex-end;
+      }
+      & .footer__text {
+        font-size: 1rem;
+        color: white;
+      }
+      & p.footer__text {
+        font-size: 0.6rem;
+      }
+
+      & nav.footer__text {
+        display: none;
+        @include respond(md) {
+          display: block;
+          & ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 8px;
+
+            & li {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+
+      & .footer__input-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+
+        @include respond(md) {
+          width: 70%;
+          align-items: flex-end;
+        }
+
+        & .footer__input {
+          width: 100%;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          background-color: $secondary-bg;
+          color: white;
+        }
+
+        & .footer__icon {
+          position: absolute;
+          right: 10px; // Ahora la flecha está a la derecha
+          top: 50%;
+          transform: translateY(-50%);
+          color: $secondary-color;
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
