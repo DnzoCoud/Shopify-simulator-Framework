@@ -1,7 +1,9 @@
 <footer class="footer">
     <div class="container pt-2">
         <div class="footer__content">
-            <div class="shop__info"></div>
+            <div class="shop__info">
+                <img src="{{ settings['footer'].settings.logo_img | asset_url }}" alt="{{settings['footer'].settings.logo_text}}" width="80" height="70">
+            </div>
             <div class="nav__content"></div>
             <div class="form__contact"></div>
         </div>
