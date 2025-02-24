@@ -31,6 +31,12 @@
         "background_image": "hero_banner_img.avif"
       }
     },
+    "latest-collection": {
+      "type": "latest-collection",
+      "settings": {
+        "title": "Latest Collection"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {

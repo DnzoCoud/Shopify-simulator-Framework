@@ -1,20 +1,30 @@
 <section class="latest-collection">
-    <div class="latest-collection__gradient"></div>
-    <div class="container py-4 latest-collection__content">
-        <div class="latest-collection__title">
-            <div>
-                <svg class="hero-banner-marquee__separator" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0,-40 C 12,-12 12,-12 40,0 C 12,12 12,12 0,40 C -12,12 -12,12 -40,0 C -12,-12 -12,-12 0,-40 Z"/>
-                </svg>
-                <span class="font-extrabolder">LATEST</span>
-                <svg class="hero-banner-marquee__separator" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 0,-40 C 12,-12 12,-12 40,0 C 12,12 12,12 0,40 C -12,12 -12,12 -40,0 C -12,-12 -12,-12 0,-40 Z"/>
-                </svg>
+    <div class="container py-4">
+        <div class="latest-collection__content">
+            <div class="latest-collection__title">
+                <div class="latest-collection__title latest-collection__title-first-col">
+                    <svg class="hero-banner-marquee__separator" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0,-40 C 12,-12 12,-12 40,0 C 12,12 12,12 0,40 C -12,12 -12,12 -40,0 C -12,-12 -12,-12 0,-40 Z"/>
+                    </svg>
+                    <div class="font-extrabolder">
+                        <span>LATEST</span> 
+                        <span>COLLECTION</span>
+                    </div>
+                    <svg class="hero-banner-marquee__separator" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0,-40 C 12,-12 12,-12 40,0 C 12,12 12,12 0,40 C -12,12 -12,12 -40,0 C -12,-12 -12,-12 0,-40 Z"/>
+                    </svg>
+                </div>
+                <span class="font-extrabolder">COLLECTION</span>
             </div>
-            <span class="font-extrabolder">COLLECTION</span>
         </div>
-
-
-
+        <div class="latest-collection__collections">
+            {% assign target_date = '2025-01-01' | date: '%s' %}
+            {% for collection in collections %}
+                {% assign collection_date = collection.created_at | date: '%s' %}
+                {% if collection_date > target_date %}
+                    {% render 'collection-card', collection: collection %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </section>

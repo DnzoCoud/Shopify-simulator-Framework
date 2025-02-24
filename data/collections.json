@@ -16,22 +16,22 @@
   {
     "id": 3,
     "title": "Spring Collection",
-    "created_at": "2024-03-21",
+    "created_at": "2025-03-21",
     "products": [4, 5],
-    "image": "spring_banner.avif"
+    "image": "ket_club.avif"
   },
   {
     "id": 4,
     "title": "Autumn Collection",
     "created_at": "2024-09-10",
     "products": [6, 7],
-    "image": "autumn_banner.avif"
+    "image": "shuffle_crewneck_grey.avif"
   },
   {
     "id": 5,
     "title": "Black Friday Special",
     "created_at": "2024-11-28",
     "products": [8, 9, 10],
-    "image": "black_friday_banner.avif"
+    "image": "shuffle_t_shirt_white.avif"
   }
 ]

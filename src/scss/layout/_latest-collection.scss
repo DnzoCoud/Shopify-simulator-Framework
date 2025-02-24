@@ -1,38 +1,59 @@
 @use "../abstracts" as *;
 
 .latest-collection {
-  @include flex-col;
   @include size(100%, auto);
-  position: relative;
-  padding-top: 60px;
+  margin-top: 60px;
+  transition: all 0.2s ease-out;
 
-  &__gradient {
-    position: absolute;
-    top: 0;
-
-    background: radial-gradient(
-      circle,
-      rgba($secondary-color, 1) 0%,
-      rgba($primary-color, 0) 100%
-    );
-  }
   &__title {
     @include flex-col-center;
+    @include square-size(100%);
 
-    & div {
+    &-first-col {
       @include flex-align-center;
-      & span {
+      flex-direction: row;
+
+      & div {
         font-size: 2rem;
         color: $text-white;
+
+        & span:nth-of-type(2) {
+          display: none;
+
+          @include respond(md) {
+            display: block;
+          }
+        }
+
+        @include respond(md) {
+          @include flex-align-center;
+          gap: 8px;
+        }
       }
     }
-    & span {
+    & > span {
       font-size: 2rem;
       color: $text-white;
+
+      @include respond(md) {
+        display: none;
+      }
     }
   }
   &__content {
     @include flex-col;
+    @include size(100%, auto);
     gap: 10px;
+  }
+
+  &__collections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 16px; /* Espacio entre elementos */
+
+    & .collection-card:nth-child(3n) {
+      grid-column: span 2;
+      height: 15rem;
+    }
   }
 }
