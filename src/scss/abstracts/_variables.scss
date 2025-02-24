@@ -1,7 +1,46 @@
-$primary-color: #181818;
-$primary-background:#1E1D20;
+$primary-color: #131314;
+$primary-background: #1d1d1f;
 $secondary-color: #762bfb;
+$secondary-bg: #232127;
 $secondary-icon-color: #ccaeff;
 $font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $font-stack: "Anton", serif;
 $text-white: #fff;
-$light-secondary-color: #9984FE; 
+$light-secondary-color: #9984fe;
+$spacing-values: (
+  "0": 0px,
+  "1": 4px,
+  "2": 8px,
+  "3": 12px,
+  "4": 16px,
+  "5": 20px,
+);
+$gap-values: (
+  "0": 0px,
+  "1": 4px,
+  "2": 8px,
+  "3": 12px,
+  "4": 16px,
+  "5": 20px,
+);
+
+$breakpoints: (
+  na: 0px,
+  // For BS grid
+  xs: 320px,
+  // Smartphone
+  sm: 748px,
+  // Tablets
+  md: 900px,
+  // Tablets Landscape and small desktops
+  lg: 1200px,
+  // Desktops
+  xl: 1800px,
+  // Large Desktop
+);
+
+$bitcoin-color: #f7931a;
+$ethereum-color: #505050;
+$litecoin-color: #bebebe;
+$dogecoin-color: #c2a632;
+$stablecoin-color: #2775ca;

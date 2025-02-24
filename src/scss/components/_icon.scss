@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.icon{
+    @include flex-col-center;
+    gap: 7px;
+    @include size(30px, 30px);
+    background: transparent;
+    border: none;
+    stroke: currentColor; 
+    stroke-width: 40;
+}

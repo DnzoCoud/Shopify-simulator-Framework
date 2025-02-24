@@ -1,29 +1,47 @@
 @use "../abstracts" as *;
 
 .container {
-  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
 
-  &--small {
-    max-width: 800px;
+  @include respond(sm) {
+    max-width: 648px;
   }
 
-  &--large {
-    max-width: 1400px;
+  @include respond(md) {
+    max-width: 850px;
   }
 
-  &--fluid {
-    width: 100%;
-    max-width: none;
+  @include respond(lg) {
+    max-width: 978px;
   }
 
-  @include responsive(tablet) {
-    width: 90%;
+  @include respond(xl) {
+    max-width: 1140px;
   }
 
-  @include responsive(mobile) {
-    width: 100%;
+  &--wide {
+    @include respond(md) {
+      max-width: 1400px;
+    }
   }
+
+  &--narrow {
+    @include respond(md) {
+      max-width: 800px;
+    }
+  }
+
+  &--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.u-container-padding-x {
+  @include container-padding-x();
 }

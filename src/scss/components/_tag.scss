@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.tag{
+    width: 100%;
+    @include flex-align-center;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+}

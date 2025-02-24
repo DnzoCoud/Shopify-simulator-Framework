@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.collection-card {
+  @include size(100%, 13rem);
+
+  &__image {
+    @include square-size(100%);
+    position: relative;
+    inset: 0;
+    @include rounded(7px);
+    & span {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1rem;
+      color: $text-white;
+    }
+
+    & img {
+      @include square-size(100%);
+      object-fit: cover;
+    }
+  }
+}

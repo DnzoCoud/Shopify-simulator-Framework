@@ -1,11 +1,88 @@
 @use "../abstracts" as *;
 
 .header {
-    background: $primary-color;
-    padding: 20px;
-    
-    &__logo {
-      font-size: 24px;
-      color: white;
+  position: sticky;
+  top: 0;
+  background-color: $primary-background;
+  z-index: 9999;
+
+  &__content {
+    height: 4rem;
+    border: none;
+    place-content: center;
+    transition: all 0.2s ease-in;
+    @include responsive-grid(2, 3);
+    &--sticky {
+      background: rgba($primary-color, 0.6);
+      backdrop-filter: blur(10px);
     }
+  }
+
+  &__nav {
+    display: none;
+    @media (min-width: 768px) {
+      @include flex-center;
+    }
+  }
+  &__logo {
+    @include flex-align-center;
+    gap: 0;
+    & img {
+      @include size(1.5rem, 1.5rem);
+    }
+    @include respond(sm) {
+      gap: 5px;
+    }
+
+    & h1 {
+      display: none;
+
+      @include respond(sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__left {
+    @include flex-align-center;
+    justify-content: flex-start;
+
+    & .menu-icon {
+      display: flex;
+      @include responsive(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__store {
+    @include flex-align-center;
+    height: 100%;
+    &--separator {
+      @include size(3px, 30%);
+      background-color: $secondary-color;
+    }
+  }
+  &__right {
+    @include flex-align-center;
+    justify-content: flex-end;
+
+    & button {
+      @include flex-center;
+      @include size(2.5rem, 2.5rem);
+      @include respond(md) {
+        @include size(3.5rem, 2.5rem);
+        padding: 14px;
+      }
+    }
+
+    & a {
+      display: none;
+      @include responsive(tablet) {
+        display: block;
+        color: $text-white;
+        text-decoration: none;
+      }
+    }
+  }
 }

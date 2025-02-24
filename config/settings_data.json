@@ -7,19 +7,42 @@
         "background_color": "#ffffff"
       }
     },
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+        "marquee_text": "FREE SHIPPING FOR ORDERS OVER $100"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "primary_logo": "shuffle_isologo.avif",
+        "aria_menu": "Open menu",
+        "aria_car": "Open car",
+        "coins-supported-label": "We Accept"
+      }
+    },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
-        "button_text": "Shop Now",
+        "button_text": "View the collection",
         "button_link": "/collections/all",
         "marquee_text": "Free Shipping on Orders Over $50",
         "background_image": "hero_banner_img.avif"
+      }
+    },
+    "latest-collection": {
+      "type": "latest-collection",
+      "settings": {
+        "title": "Latest Collection"
       }
     },
     "footer": {
       "type": "footer",
       "settings": {
         "logo_text": "MyShopify",
+        "logo_img": "shuffle_isologo.avif",
+        "shop_email": "support@shuffle.store",
         "links": [
           { "label": "Home", "url": "/" },
           { "label": "Cart", "url": "/cart" },

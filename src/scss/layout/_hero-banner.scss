@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.hero-banner {
+  @include size(100%, auto);
+  @include flex-col;
+  transition: all 0.2s ease-out;
+
+  &__content {
+    @include size(100%, 30rem);
+    position: relative;
+    @include rounded(8px);
+    transition: all 0.2s ease-out;
+
+    & img {
+      @include size(100%, 100%);
+      object-fit: cover;
+    }
+
+    & button {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      font-weight: bolder;
+      @include rounded(4px);
+      font-weight: 900;
+      font-size: 0.8rem;
+      @include size(13rem, 3rem);
+
+      display: none;
+
+      @include respond(md) {
+        display: block;
+      }
+    }
+  }
+}

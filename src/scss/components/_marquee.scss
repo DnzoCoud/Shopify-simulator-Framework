@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+/**
+ * Estilos para el componente `.marquee`
+ * Este componente crea un efecto de desplazamiento continuo (marquee) con variantes de color.
+ */
+.marquee{
+    position: relative;
+    white-space: nowrap;
+    @include flex-center;
+    display: flex;
+    overflow: hidden;
+    @include size;
+    text-transform: uppercase;
+    &--primary{
+        background-color: transparent;
+        &::before {
+          content: "";
+          @include gradient-init-to-fin($primary-color, $primary-color);
+        }        
+    }
+
+    &--secondary{
+        background-color: $secondary-color;
+        &::before {
+          content: "";
+          @include gradient-init-to-fin($secondary-color, $secondary-color);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 2px;
+        min-width: 200%;
+        @include marquee-animation;
+        
+        &--slow{
+          @include marquee-animation(80s);
+        }
+    }
+  
+}
