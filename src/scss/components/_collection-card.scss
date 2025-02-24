@@ -7,6 +7,7 @@
     @include square-size(100%);
     position: relative;
     inset: 0;
+    @include rounded(7px);
     & span {
       position: absolute;
       bottom: 1.5rem;
