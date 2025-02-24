@@ -9,22 +9,27 @@
   &::before {
     content: ""; /* Necesario para que el pseudo-elemento se renderice */
     position: absolute;
-    top: -20%; /* Posiciona la esfera arriba del título */
+    top: -12%; /* Posiciona la esfera arriba del título */
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Ajusta el centrado */
-    width: 600px; /* Tamaño de la esfera */
+    width: 100%; /* Tamaño de la esfera */
     height: 600px; /* Tamaño de la esfera */
     background: radial-gradient(
       circle,
       rgba($secondary-color, 1) 0%,
-      rgba(128, 0, 128, 0) 38%
+      rgba(128, 0, 128, 0) 58%
     ); /* Degradado circular */
     z-index: -1; /* Coloca la esfera detrás del contenido */
   }
 
   @include respond(md) {
     &::before {
-      top: -30%; /* Posiciona la esfera arriba del título */
+      top: -22%; /* Posiciona la esfera arriba del título */
+      background: radial-gradient(
+        circle,
+        rgba($secondary-color, 1) 0%,
+        rgba(128, 0, 128, 0) 33%
+      );
     }
   }
 
