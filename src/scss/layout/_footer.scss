@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+.footer {
+  @include size(100%, auto);
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 16px; /* Espacio entre columnas */
+
+    /* Intercambiar columnas en dispositivos pequeños */
+    .shop__info {
+      order: 2; /* La primera columna se mueve a la segunda posición */
+    }
+
+    .nav__content {
+      order: 1; /* La segunda columna se mueve a la primera posición */
+    }
+
+    .form__contact {
+      order: 3; /* La tercera columna permanece en su lugar */
+    }
+
+    /* Restaurar el orden en dispositivos medianos (md) */
+    @include respond(md) {
+      .shop__info {
+        order: initial; /* Restablece el orden */
+      }
+
+      .nav__content {
+        order: initial; /* Restablece el orden */
+      }
+
+      .form__contact {
+        order: initial; /* Restablece el orden */
+      }
+    }
+  }
+}
