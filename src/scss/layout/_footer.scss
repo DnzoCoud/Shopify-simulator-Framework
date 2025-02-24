@@ -35,5 +35,47 @@
         order: initial; /* Restablece el orden */
       }
     }
+
+    &-shop__info {
+      @include flex-col;
+      gap: 15px;
+
+      &.shop__info--img {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        & img {
+          @include square-size(4rem);
+        }
+
+        & span {
+          color: $text-white;
+          font-weight: 900;
+          display: flex;
+          align-items: flex-start;
+          & i {
+            color: $secondary-color;
+            font-weight: normal;
+          }
+        }
+      }
+
+      & p {
+        color: $text-white;
+        font-size: 0.5rem;
+        line-height: 0.8rem;
+        & a {
+          text-decoration: none;
+          color: $text-white;
+        }
+      }
+    }
+    &-nav__content {
+      @include flex-col;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
 }

@@ -42,6 +42,7 @@
       "settings": {
         "logo_text": "MyShopify",
         "logo_img": "shuffle_isologo.avif",
+        "shop_email": "support@shuffle.store",
         "links": [
           { "label": "Home", "url": "/" },
           { "label": "Cart", "url": "/cart" },
