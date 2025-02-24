@@ -1,5 +1,8 @@
-<div class="coins-supported p-2">
-    <p class="coins-supported__label text-2xs">We Accept</p>
+{% assign label = label | default: 'We Accept' %}
+{% assign is_footer = is_footer | default: false %}
+
+<div class="coins-supported {% if is_footer == false %}p-2{% endif %} {% if is_footer %}is-footer{% endif %}">
+    <p class="coins-supported__label text-2xs">{{label}}</p>
     <div class="coins-supported__content">
         <span class="coins-supported__span coins-supported__span--bitcoin">
             {%  render 'icon-bitcoin' %}

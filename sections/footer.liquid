@@ -1,0 +1,68 @@
+<footer class="footer">
+    <div class="container py-2">
+        <div class="footer__content">
+            <div class="footer__content-shop__info">
+               <div class="footer__content-shop__info shop__info--img">
+                    <div>
+                        <img src="{{ settings['footer'].settings.logo_img | asset_url }}" alt="{{settings['footer'].settings.logo_text}}" width="80" height="70">
+                        <span>
+                            <i>|</i>STORE
+                        </span>
+                    </div>
+                    <ul class="shop__info--list">
+                        <li>FACEBOOK</li>
+                        <li>X(TWITTER)</li>
+                        <li>INSTAGRAM</li>
+                    </ul>
+               </div>
+               <p>
+                &copy; {{ "now" | date: "%Y" }}, {{settings['footer'].settings.logo_text}} Operated by <br>
+                Studio Plaid. Need help? <br>
+                Email <a href="mailto:{{settings['footer'].settings.shop_email}}">{{settings['footer'].settings.shop_email}}</a>
+               </p>
+            </div>
+            <div class="footer__content-nav">
+                <nav class="footer__nav footer__nav--primary">
+                    <ul class="footer__nav-list">
+                        {% for item in settings['footer'].settings.links %}
+                            {% if forloop.index <= 4 %}
+                                <li class="footer__nav-item">
+                                    <a href="{{ item.url }}" class="footer__nav-link {% if forloop.index == 1 %}active{% endif %}">{{ item.label | upcase  }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+                
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        {% for item in settings['footer'].settings.links %}
+                            {% if forloop.index > 4 %}
+                                <li class="footer__nav-item">
+                                    <a href="{{ item.url }}" class="footer__nav-link">{{ item.label }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+                {% render 'coins-supported', label: "We accept all major cards, Paypal & crypto", is_footer:true %}
+            </div>
+            <div class="footer__content-contact">
+                <p class="footer__text">Subscribe and receibe drop notifications</p>
+
+                <div class="footer__input-wrapper">
+                    <input type="text" class="footer__input" placeholder="Escribe aquí...">
+                    <span class="footer__icon">&#x2192;</span> <!-- Flecha hacia la derecha -->
+                </div>
+
+                <nav class="footer__text">
+                    <ul>
+                        <li>FACEBOOK</li>
+                        <li>X(TWITTER)</li>
+                        <li>INSTAGRAM</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
