@@ -1,0 +1,140 @@
+@use "../abstracts" as *;
+
+.latest-collection {
+  position: relative;
+  @include size(100%, auto);
+  margin-top: 60px;
+  transition: all 0.2s ease-out;
+
+  &::before {
+    content: ""; /* Necesario para que el pseudo-elemento se renderice */
+    position: absolute;
+    top: -20%; /* Posiciona la esfera arriba del título */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    width: 600px; /* Tamaño de la esfera */
+    height: 600px; /* Tamaño de la esfera */
+    background: radial-gradient(
+      circle,
+      rgba($secondary-color, 1) 0%,
+      rgba(128, 0, 128, 0) 38%
+    ); /* Degradado circular */
+    z-index: -1; /* Coloca la esfera detrás del contenido */
+  }
+
+  @include respond(md) {
+    &::before {
+      top: -30%; /* Posiciona la esfera arriba del título */
+    }
+  }
+
+  // &__title {
+  //   width: 100%;
+  //   display: grid;
+  //   margin-bottom: 2rem;
+  //   grid-template-columns: 1fr auto 1fr; /* 3 columnas: SVG | Texto | SVG */
+  //   align-items: self-start; /* Centra verticalmente todo el contenido */
+  //   margin-bottom: 2rem;
+  //   transition: all 0.2s ease-in;
+
+  //   @include respond(md) {
+  //     align-items: center;
+  //   }
+
+  //   .first-col {
+  //     justify-self: end; /* Alinea el primer SVG al final de su columna */
+  //   }
+
+  //   .last-col {
+  //     justify-self: start; /* Alinea el último SVG al principio de su columna */
+  //   }
+
+  //   span {
+  //     text-align: center; /* Centra el texto en la columna del medio */
+  //     color: $text-white;
+  //     font-size: 2rem;
+  //     font-weight: 900;
+  //   }
+  // }
+
+  &__title {
+    position: relative; /* Contenedor relativo para posicionar las estrellas */
+    width: 100%;
+    text-align: center; /* Centra el texto */
+    margin-bottom: 2rem;
+    transition: all 0.2s ease-in;
+
+    span {
+      color: $text-white;
+      font-size: 2rem;
+      font-weight: 900;
+      display: inline-block; /* Asegura que el texto no ocupe el 100% del ancho */
+    }
+
+    .first-col,
+    .last-col {
+      position: absolute;
+      top: 25%; /* Centra verticalmente */
+      transform: translateY(-50%); /* Ajusta el centrado vertical */
+      width: 50px; /* Tamaño de las estrellas*/
+      height: 50px; /* Tamaño de las estrellas*/
+    }
+
+    .first-col {
+      left: 10px; /* Posición a la izquierda del texto */
+    }
+
+    .last-col {
+      right: 10px; /* Posición a la derecha del texto */
+    }
+
+    @include respond(md) {
+      .first-col,
+      .last-col {
+        top: 50%;
+      }
+      .first-col {
+        left: 170px; /* Ajusta la posición para pantallas grandes */
+      }
+
+      .last-col {
+        right: 170px; /* Ajusta la posición para pantallas grandes */
+      }
+    }
+    @include respond(lg) {
+      .first-col {
+        left: 190px; /* Ajusta la posición para pantallas grandes */
+      }
+
+      .last-col {
+        right: 190px; /* Ajusta la posición para pantallas grandes */
+      }
+    }
+  }
+  &__content {
+    @include flex-col;
+    @include size(100%, auto);
+    gap: 10px;
+  }
+
+  &__collections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    row-gap: 24px;
+    column-gap: 16px;
+    & .collection-card {
+      grid-column: span 2;
+      height: 15rem;
+    }
+
+    @include respond(md) {
+      & .collection-card {
+        grid-column: span 1;
+      }
+      & .collection-card:nth-child(3n) {
+        grid-column: span 2; /* 3 columna se unen dos columnas en el grid */
+        height: 15rem;
+      }
+    }
+  }
+}
